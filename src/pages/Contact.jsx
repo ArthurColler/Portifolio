@@ -2,9 +2,9 @@ import PageTransition from '../components/PageTransition.jsx'
 import SectionReveal from '../components/SectionReveal.jsx'
 
 const channels = [
-  { label: 'E-mail', value: 'seuemail@exemplo.com', href: 'mailto:seuemail@exemplo.com' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/seu-usuario', href: 'https://linkedin.com/in/seu-usuario' },
-  { label: 'GitHub', value: 'github.com/seu-usuario', href: 'https://github.com/seu-usuario' },
+  { label: 'E-mail', value: 'alfds23@gmail.com', href: 'mailto:alfds23@gmail.com' },
+  { label: 'LinkedIn', value: 'linkedin.com/in/arthursantos', href: 'https://linkedin.com/in/arthursantos-76a8a4200' },
+  { label: 'GitHub', value: 'github.com/ArthurColler', href: 'https://github.com/ArthurColler' },
 ]
 
 export default function Contact() {
@@ -16,7 +16,7 @@ export default function Contact() {
           <h1 className="text-3xl md:text-4xl font-semibold mb-4">Bora trocar uma ideia?</h1>
           <p className="text-slate-400 max-w-xl mx-auto">
             Se você chegou até aqui, já viu um pouco do que eu faço. Manda uma mensagem — sobre uma
-            vaga, um projeto ou só para trocar ideia sobre dados.
+            vaga, um projeto ou só para trocar ideia sobre automação e dados.
           </p>
         </SectionReveal>
       </section>

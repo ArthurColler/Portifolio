@@ -55,7 +55,7 @@ export default function ProjectDetail() {
             ))}
           </div>
           <div className="flex flex-col gap-2">
-            {project.links.repo && (
+            {project.links.repo ? (
               <a
                 href={project.links.repo}
                 target="_blank"
@@ -64,6 +64,8 @@ export default function ProjectDetail() {
               >
                 Ver repositório
               </a>
+            ) : (
+              <span className="text-xs text-slate-500 text-center">Adicione o link do repositório quando tiver</span>
             )}
             {project.links.demo ? (
               <a

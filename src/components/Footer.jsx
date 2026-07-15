@@ -1,7 +1,7 @@
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/seu-usuario' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/seu-usuario' },
-  { label: 'E-mail', href: 'mailto:seuemail@exemplo.com' },
+  { label: 'GitHub', href: 'https://github.com/ArthurColler' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/arthursantos-76a8a4200' },
+  { label: 'E-mail', href: 'mailto:alfds23@gmail.com' },
 ]
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="border-t border-white/5 mt-24">
       <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-slate-500">
-          © {new Date().getFullYear()} Seu Nome — feito com café e curiosidade por dados.
+          © {new Date().getFullYear()} Arthur Santos — feito com café e curiosidade por automação.
         </p>
         <div className="flex gap-5">
           {socials.map((s) => (

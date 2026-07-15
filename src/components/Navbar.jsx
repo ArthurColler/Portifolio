@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
         <NavLink to="/" className="font-display text-lg font-semibold tracking-tight text-white">
-          seu<span className="text-accent">.nome</span>
+          arthur<span className="text-accent">.santos</span>
         </NavLink>
 
         <div className="hidden md:flex items-center gap-1">

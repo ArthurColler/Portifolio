@@ -5,7 +5,7 @@ import SectionReveal from '../components/SectionReveal.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
 
-const skills = ['Excel Avançado', 'Power BI', 'SQL', 'Python', 'Storytelling de Dados', 'ETL']
+const skills = ['Make.com', 'n8n', 'Python', 'SQL', 'PostgreSQL', 'APIs REST']
 
 export default function Home() {
   const featured = projects.slice(0, 3)
@@ -28,7 +28,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="text-4xl md:text-6xl font-semibold leading-tight"
           >
-            Seu Nome, <span className="text-gradient">Analista</span> que gosta de transformar dado em decisão
+            Arthur Santos, <span className="text-gradient">Analista de TI</span> que gosta de automatizar o
+            chato e deixar o dado fazer sentido
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -36,8 +37,9 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mt-6 text-lg text-slate-400 max-w-xl"
           >
-            Troque este parágrafo por uma apresentação curta e no seu tom: quem você é, o que
-            você analisa no dia a dia e o tipo de problema que mais gosta de resolver.
+            Trabalho na fronteira entre suporte técnico, automação de processos (RPA) e dados —
+            construindo integrações com Make.com e n8n, escrevendo consultas SQL e montando
+            dashboards que ajudam gente de verdade a tomar decisão mais rápido.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 14 }}
