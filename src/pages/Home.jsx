@@ -1,0 +1,115 @@
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import PageTransition from '../components/PageTransition.jsx'
+import SectionReveal from '../components/SectionReveal.jsx'
+import ProjectCard from '../components/ProjectCard.jsx'
+import { projects } from '../data/projects.js'
+
+const skills = ['Excel Avançado', 'Power BI', 'SQL', 'Python', 'Storytelling de Dados', 'ETL']
+
+export default function Home() {
+  const featured = projects.slice(0, 3)
+
+  return (
+    <PageTransition>
+      <section className="mx-auto max-w-6xl px-6 pt-40 pb-24 grid md:grid-cols-[1.2fr,0.8fr] gap-12 items-center">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-accent text-sm font-medium tracking-wide uppercase mb-4"
+          >
+            Olá, eu sou
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="text-4xl md:text-6xl font-semibold leading-tight"
+          >
+            Seu Nome, <span className="text-gradient">Analista</span> que gosta de transformar dado em decisão
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-6 text-lg text-slate-400 max-w-xl"
+          >
+            Troque este parágrafo por uma apresentação curta e no seu tom: quem você é, o que
+            você analisa no dia a dia e o tipo de problema que mais gosta de resolver.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-8 flex flex-wrap gap-4"
+          >
+            <Link
+              to="/projetos"
+              className="px-6 py-3 rounded-full bg-accent text-base-950 font-medium hover:shadow-glow transition-shadow"
+            >
+              Ver meus projetos
+            </Link>
+            <Link
+              to="/contato"
+              className="px-6 py-3 rounded-full border border-white/10 text-slate-200 hover:bg-white/5 transition-colors"
+            >
+              Falar comigo
+            </Link>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative"
+        >
+          <div className="aspect-square rounded-[2rem] bg-gradient-to-br from-accent/20 via-base-800 to-base-900 border border-white/5 flex items-center justify-center">
+            <div className="text-center px-6">
+              <span className="block h-16 w-16 mx-auto mb-4 rounded-full bg-white/5 flex items-center justify-center text-accent">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.6" />
+                  <path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                </svg>
+              </span>
+              <p className="text-sm text-slate-400">Substitua por sua foto (quadrada, boa iluminação)</p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      <SectionReveal className="mx-auto max-w-6xl px-6 pb-24">
+        <p className="text-sm uppercase tracking-wide text-slate-500 mb-4">Ferramentas que uso</p>
+        <div className="flex flex-wrap gap-3">
+          {skills.map((s) => (
+            <span key={s} className="px-4 py-2 rounded-full text-sm card-surface text-slate-300">
+              {s}
+            </span>
+          ))}
+        </div>
+      </SectionReveal>
+
+      <section className="mx-auto max-w-6xl px-6 pb-28">
+        <SectionReveal className="flex items-end justify-between mb-8">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold">Projetos em destaque</h2>
+            <p className="text-slate-400 mt-2">Uma amostra do que já coloquei em prática.</p>
+          </div>
+          <Link to="/projetos" className="hidden md:block text-sm text-accent hover:underline">
+            Ver todos →
+          </Link>
+        </SectionReveal>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featured.map((project, i) => (
+            <SectionReveal key={project.slug} delay={i * 0.08}>
+              <ProjectCard project={project} index={i} />
+            </SectionReveal>
+          ))}
+        </div>
+      </section>
+    </PageTransition>
+  )
+}
