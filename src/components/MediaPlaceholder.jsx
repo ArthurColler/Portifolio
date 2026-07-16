@@ -1,12 +1,26 @@
-// Bloco visual reutilizável no lugar de uma imagem/vídeo real.
-// Troque por um <img> ou <video> assim que tiver a mídia do projeto —
-// o texto abaixo já indica a proporção/tamanho recomendado.
+// Mostra a mídia real (src) quando disponível; senão cai no bloco de
+// placeholder para o que ainda falta substituir.
 export default function MediaPlaceholder({
   label = 'Substitua por uma imagem 1200×800',
   variant = 'image',
   className = '',
   seed = 0,
+  src,
+  alt = '',
+  fit = 'cover',
 }) {
+  if (src) {
+    return (
+      <div className={`relative overflow-hidden rounded-2xl border border-white/5 bg-base-900 ${className}`}>
+        <img
+          src={src}
+          alt={alt}
+          className={`h-full w-full ${fit === 'contain' ? 'object-contain' : 'object-cover'}`}
+        />
+      </div>
+    )
+  }
+
   const gradients = [
     'from-accent/25 via-base-800 to-base-900',
     'from-fuchsia-500/15 via-base-800 to-base-900',

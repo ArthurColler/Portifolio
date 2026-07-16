@@ -3,7 +3,9 @@ import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition.jsx'
 import SectionReveal from '../components/SectionReveal.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
+import MediaPlaceholder from '../components/MediaPlaceholder.jsx'
 import { projects } from '../data/projects.js'
+import profilePhoto from '../assets/profile.png'
 
 const skills = ['Make.com', 'n8n', 'Python', 'SQL', 'PostgreSQL', 'APIs REST']
 
@@ -68,17 +70,11 @@ export default function Home() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <div className="aspect-square rounded-[2rem] bg-gradient-to-br from-accent/20 via-base-800 to-base-900 border border-white/5 flex items-center justify-center">
-            <div className="text-center px-6">
-              <span className="block h-16 w-16 mx-auto mb-4 rounded-full bg-white/5 flex items-center justify-center text-accent">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.6" />
-                  <path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                </svg>
-              </span>
-              <p className="text-sm text-slate-400">Substitua por sua foto (quadrada, boa iluminação)</p>
-            </div>
-          </div>
+          <MediaPlaceholder
+            src={profilePhoto}
+            alt="Foto de Arthur Santos"
+            className="aspect-square w-full"
+          />
         </motion.div>
       </section>
 

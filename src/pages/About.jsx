@@ -1,6 +1,7 @@
 import PageTransition from '../components/PageTransition.jsx'
 import SectionReveal from '../components/SectionReveal.jsx'
 import MediaPlaceholder from '../components/MediaPlaceholder.jsx'
+import profilePhoto from '../assets/profile.png'
 
 const skillGroups = [
   { title: 'Automação & Integrações', items: ['Make.com', 'n8n', 'RPA', 'Webhooks', 'APIs RESTful', 'Meta Cloud API'] },
@@ -71,7 +72,8 @@ export default function About() {
       <section className="mx-auto max-w-5xl px-6 pt-36 pb-20 grid md:grid-cols-[0.9fr,1.1fr] gap-12 items-start">
         <SectionReveal>
           <MediaPlaceholder
-            label="Substitua por uma foto sua, sem frescura, retrato 3:4"
+            src={profilePhoto}
+            alt="Foto de Arthur Santos"
             className="aspect-[3/4] w-full max-w-sm"
           />
         </SectionReveal>

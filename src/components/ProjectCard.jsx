@@ -12,6 +12,9 @@ export default function ProjectCard({ project, index = 0 }) {
         <MediaPlaceholder
           seed={index}
           label={project.mediaLabel}
+          src={project.image}
+          alt={project.imageAlt}
+          fit="contain"
           className="aspect-[4/3] w-full"
         />
         <div className="px-2 pt-4 pb-2">

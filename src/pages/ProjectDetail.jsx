@@ -31,13 +31,30 @@ export default function ProjectDetail() {
         </SectionReveal>
       </section>
 
-      <SectionReveal className="mx-auto max-w-4xl px-6 pb-12">
+      <SectionReveal className="mx-auto max-w-4xl px-6 pb-6">
         <MediaPlaceholder
           variant={project.mediaVariant ?? 'image'}
           label={project.mediaLabel}
+          src={project.image}
+          alt={project.imageAlt}
+          fit="contain"
           className="aspect-video w-full"
         />
       </SectionReveal>
+
+      {project.gallery?.length > 0 && (
+        <SectionReveal delay={0.1} className="mx-auto max-w-4xl px-6 pb-12 grid grid-cols-2 gap-4">
+          {project.gallery.map((item) => (
+            <MediaPlaceholder
+              key={item.src}
+              src={item.src}
+              alt={item.alt}
+              fit="contain"
+              className="aspect-[4/3] w-full"
+            />
+          ))}
+        </SectionReveal>
+      )}
 
       <section className="mx-auto max-w-4xl px-6 pb-16 grid md:grid-cols-[1.4fr,1fr] gap-10">
         <SectionReveal>
